@@ -1,0 +1,33 @@
+version: "3.7"
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+    driver: bridge
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/data:/data 
+      - ./caddy/config:/config
+    networks:
+      - web
+      - internal
+  owncast:
+    image: gabekangas/owncast
+    container_name: "owncast"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "1935:1935"
+    volumes:
+      - "./data:/app/data"
+    networks:
+      - internal
