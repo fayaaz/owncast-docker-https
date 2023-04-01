@@ -13,7 +13,7 @@ might work in WSL2 as well.
     OWNCAST_URL=live.example.com ./setup.sh
     ```
 
-    This should create the docker networks and create the Caddyfile in ./caddy
+    This should create the docker networks and create the Caddyfile in ./caddy. 
     You can add your email by updating the global options block at the top of ./caddy/Caddyfile.
     If you don't need the www.<your_domain> block you can remove this as well. 
 
