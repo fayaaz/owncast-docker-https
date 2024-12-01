@@ -20,14 +20,21 @@ services:
       - web
       - internal
   owncast:
-    image: gabekangas/owncast
+    image: owncast/owncast # remove if using hardware encoding
     container_name: "owncast"
     restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
+    security_opt: # remove if using hardware encoding
+      - no-new-privileges:true # remove if using hardware encoding
     ports:
       - "1935:1935"
     volumes:
       - "./data:/app/data"
     networks:
       - internal
+# Uncomment for access to encoding/decoding hardware
+#    devices:
+#      - /dev/dri:/dev/dri
+#    priveleged: true
+#    build:
+#      context: ./
+#    dockerfile: ./Dockerfile.vaapi  
