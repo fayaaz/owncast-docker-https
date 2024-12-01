@@ -34,7 +34,7 @@ services:
 # Uncomment for access to encoding/decoding hardware
 #    devices:
 #      - /dev/dri:/dev/dri
-#    priveleged: true
+#    privileged: true
 #    build:
 #      context: ./
 #      dockerfile: ./Dockerfile.vaapi
