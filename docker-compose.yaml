@@ -14,7 +14,7 @@ services:
       - "443:443"
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./caddy/data:/data 
+      - ./caddy/data:/data
       - ./caddy/config:/config
     networks:
       - web
@@ -37,4 +37,4 @@ services:
 #    priveleged: true
 #    build:
 #      context: ./
-#    dockerfile: ./Dockerfile.vaapi  
+#      dockerfile: ./Dockerfile.vaapi
