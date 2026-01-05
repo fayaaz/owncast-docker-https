@@ -1,2 +1,2 @@
-FROM owncast/owncast:0.1.2
+FROM owncast/owncast:0.2.3
 RUN apk add intel-media-driver
